@@ -17,10 +17,12 @@ RUN \
   git clone https://github.com/agderlan/get5-web.git; \
   cp -r get5-web/* /app/; \
   cd /app/; \
-  pip install uwsgi; \
+  python2 -m pip uninstall -y setuptools; \
+  python2 -m pip install setuptools==39.1.0; \
+  python2 -m pip install uwsgi; \
   virtualenv venv; \
   source venv/bin/activate; \
-  pip install -r requirements.txt; \
+  python2 -m pip install -r requirements.txt; \
   apk del .build-deps; \
   rm -rf /var/cache/apk/*; \
   addgroup -g 1000 -S app; \
