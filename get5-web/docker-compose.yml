@@ -6,8 +6,6 @@ services:
     - MYSQL_ROOT_PASSWORD=<NOT_SO_SECRET_PW>
     mem_limit: 512m
     restart: always
-    ports:
-    - "3306:3306"
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
