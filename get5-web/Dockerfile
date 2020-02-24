@@ -18,6 +18,7 @@ RUN \
   cp -r get5-web/* /app/; \
   cd /app/; \
   pip install uwsgi; \
+  pip install virtualenv; \
   virtualenv venv; \
   source venv/bin/activate; \
   pip install -r requirements.txt; \
