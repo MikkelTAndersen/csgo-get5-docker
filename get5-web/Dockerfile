@@ -8,7 +8,7 @@ RUN \
     linux-headers \
     mariadb-dev \
     git \
-    python-dev \
+    python2-dev \
     py2-pip \
     py-virtualenv \
     pcre-dev; \
@@ -17,12 +17,11 @@ RUN \
   git clone https://github.com/agderlan/get5-web.git; \
   cp -r get5-web/* /app/; \
   cd /app/; \
-  python2 -m pip uninstall -y setuptools; \
-  python2 -m pip install setuptools==39.1.0; \
-  python2 -m pip install uwsgi; \
+  pip install uwsgi; \
+  pip install virtualenv; \
   virtualenv venv; \
   source venv/bin/activate; \
-  python2 -m pip install -r requirements.txt; \
+  pip install -r requirements.txt; \
   apk del .build-deps; \
   rm -rf /var/cache/apk/*; \
   addgroup -g 1000 -S app; \
