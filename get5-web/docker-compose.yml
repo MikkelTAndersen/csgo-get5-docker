@@ -15,7 +15,7 @@ services:
   get5:
     image: alget5:latest
     ports:
-    - "8888:8080"
+    - "55555:8080"
     restart: always
     volumes:
     - ./prod_config.py:/app/instance/prod_config.py
